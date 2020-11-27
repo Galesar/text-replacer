@@ -1,0 +1,73 @@
+.textArea {
+    display: flex;
+}
+
+.textArea textarea {
+    margin: auto;
+    resize: none;
+    height: 600px;
+    font-size: 20px;
+    width: 45%;
+    display: flex;
+    border-color: #242425;
+    border-width: 3px;
+}
+
+.textArea textarea::-webkit-scrollbar {
+    width: 24px; /* ширина для вертикального скролла */
+    height: 8px; /* высота для горизонтального скролла */
+    background-color: #ffffff;
+}
+
+.textArea textarea::-webkit-scrollbar-thumb {
+    background-color: #242425;
+}
+
+.textArea textarea::-webkit-scrollbar-button:vertical:start:decrement {
+    background: linear-gradient(120deg,  #242425 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(240deg,  #242425 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(0deg,  #242425 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #cce3fa;
+}
+
+.textArea textarea::-webkit-scrollbar-button:vertical:end:increment {
+    background: linear-gradient(300deg,  #242425 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(60deg,  #242425 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(180deg,  #242425 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #cce3fa;
+}
+
+
+.textArea form {
+    padding: 10px;
+    display: contents;
+}
+
+.title{
+
+    font-size: 50px;
+    color: #ffffff
+}
+
+.buttonContainer {
+    padding-top: 40px;
+    display: block;
+}
+
+.buttonContainer a {
+    border-width: 3px;
+    border-color:#cce3fa;
+    border-style: solid;
+    color:#cce3fa;
+    border-radius: 10px;
+    font-size: 24px;
+    margin: 10px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.buttonContainer a:hover {
+    color:#242425;
+    background-color:#cce3fa;
+    transition: 0.2s;
+}
