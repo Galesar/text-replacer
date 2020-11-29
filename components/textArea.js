@@ -3,7 +3,7 @@ import { useEffect } from "react";
 export default function TextArea(props) {
 
     const sendText = (e) => {
-        props.syncText(e.target.value);
+        if(props.syncText != null) props.syncText(e.target.value);
     }
 
     return(

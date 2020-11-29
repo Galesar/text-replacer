@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import TextArea from '../components/textArea';
-import { ciclemen, ciclewomen } from '../scripts/textReplacer';
-import styles from '../static/styles/index.module.css';
+import { ciclemen, ciclemen2, ciclewomen } from '../scripts/textReplacer';
+import styles from '../public/static/styles/index.module.css';
 
 export default function index() {
     const [value, setValue] = useState('');
@@ -15,6 +15,21 @@ export default function index() {
         sex: 'Ж',
         name: 'Женщина'
     }]);
+
+    const readFile = (e) => {
+        let reader = new FileReader();
+        let file = e.target.files[0];
+        console.log(file)
+
+        reader.readAsText(file, 'utf-8');
+        reader.onload = function() {
+            setValue(reader.result);
+          };
+        
+          reader.onerror = function() {
+            console.log(reader.error);
+          };
+    }
 
     const sexArrayHandler = () => {
         setActive(prevState => {
@@ -40,6 +55,7 @@ export default function index() {
 
     const syncText = (value) => {
         if(sex == 'М') {
+            // ciclemen2(value);
             value = ciclemen(value);
         }
         else if (sex == 'Ж') {
@@ -69,7 +85,7 @@ export default function index() {
             <center>
             <div className={styles.textArea}>
             <TextArea readOnly={false} placeholder={"Введите ваш текст"} value={null} syncText={syncText}/>
-            <TextArea readOnly={true} placeholder={"Результат"} value={value} />
+            <TextArea readOnly={false} placeholder={"Результат"} value={value} syncText={null}/>
             </div>
             </center>
             
